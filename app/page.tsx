@@ -11,8 +11,10 @@ import ExamplePrompts from "@/components/ExamplePrompts";
 import Features from "@/components/Features";
 import Footer from "@/components/Footer";
 import ToastContainer from "@/components/ToastContainer";
+import Confetti from "@/components/Confetti";
 import { useToast } from "@/hooks/useToast";
 import { Category, InputMode, LoadingState, ScriptGenerationResponse } from "@/types";
+import ParticleBackground from "@/components/ParticleBackground";
 
 export default function Home() {
   const [loadingState, setLoadingState] = useState<LoadingState>("idle");
@@ -20,6 +22,7 @@ export default function Home() {
   const outputRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLDivElement>(null);
   const { toasts, removeToast, success, error, info } = useToast();
+  const [showConfetti, setShowConfetti] = useState(false);
 
   const handleGenerate = async (
     story: string,
@@ -69,6 +72,8 @@ export default function Home() {
       setLoadingState("success");
       setResult(data);
       success("Your viral script is ready! 🎬");
+      setShowConfetti(true);
+      setTimeout(() => setShowConfetti(false), 4000);
     } catch {
       setLoadingState("error");
       setResult({
@@ -88,6 +93,15 @@ export default function Home() {
       block: "start",
     });
     info("Example loaded! Pick a category and hit Generate.");
+    const textarea = document.querySelector("textarea");
+    if (textarea) {
+      const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+        window.HTMLTextAreaElement.prototype,
+        "value"
+      )?.set;
+      nativeInputValueSetter?.call(textarea, story);
+      textarea.dispatchEvent(new Event("input", { bubbles: true }));
+    }
   };
 
   return (
@@ -99,8 +113,12 @@ export default function Home() {
         overflowX: "hidden",
       }}
     >
+      <ParticleBackground />
       {/* Toast Notifications */}
       <ToastContainer toasts={toasts} onRemove={removeToast} />
+
+      {/* Confetti */}
+      <Confetti trigger={showConfetti} />
 
       {/* Navbar */}
       <Navbar />
