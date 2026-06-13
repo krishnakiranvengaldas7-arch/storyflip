@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { examplePrompts } from "@/lib/data";
 import { Category, InputMode } from "@/types";
+import { useState, useEffect } from "react";
 
 const categoryColors: Record<Category, { text: string; bg: string; border: string }> = {
   Cheating: {
@@ -34,6 +35,56 @@ const categoryColors: Record<Category, { text: string; bg: string; border: strin
     text: "#86efac",
     bg: "rgba(34,197,94,0.08)",
     border: "rgba(34,197,94,0.2)",
+  },
+  "Missing Person": {
+    text: "#67e8f9",
+    bg: "rgba(34,211,238,0.08)",
+    border: "rgba(34,211,238,0.2)",
+  },
+  "Family Secrets": {
+    text: "#d8b4fe",
+    bg: "rgba(168,85,247,0.08)",
+    border: "rgba(168,85,247,0.2)",
+  },
+  "Workplace Drama": {
+    text: "#fcd34d",
+    bg: "rgba(245,158,11,0.08)",
+    border: "rgba(245,158,11,0.2)",
+  },
+  Supernatural: {
+    text: "#c4b5fd",
+    bg: "rgba(139,92,246,0.08)",
+    border: "rgba(139,92,246,0.2)",
+  },
+  AITA: {
+    text: "#7dd3fc",
+    bg: "rgba(14,165,233,0.08)",
+    border: "rgba(14,165,233,0.2)",
+  },
+  Stalker: {
+    text: "#fca5a5",
+    bg: "rgba(239,68,68,0.08)",
+    border: "rgba(239,68,68,0.2)",
+  },
+  Gaslighting: {
+    text: "#f0abfc",
+    bg: "rgba(217,70,239,0.08)",
+    border: "rgba(217,70,239,0.2)",
+  },
+  Confession: {
+    text: "#fda4af",
+    bg: "rgba(244,63,94,0.08)",
+    border: "rgba(244,63,94,0.2)",
+  },
+  "Neighbor Drama": {
+    text: "#bef264",
+    bg: "rgba(132,204,22,0.08)",
+    border: "rgba(132,204,22,0.2)",
+  },
+  "Friend Betrayal": {
+    text: "#f9a8d4",
+    bg: "rgba(236,72,153,0.08)",
+    border: "rgba(236,72,153,0.2)",
   },
 };
 
@@ -72,18 +123,19 @@ export default function ExamplePrompts({ onSelectExample }: ExamplePromptsProps)
           Click any card to instantly load it into the generator
         </p>
       </motion.div>
-
+<div className="marquee-container" style={{ overflow: "hidden", width: "100%", padding: "20px 0" }}>
       {/* Cards Grid */}
-      <div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-6"
-        style={{ maxWidth: "1100px", margin: "0 auto" }}
-      >
-        {examplePrompts.map((prompt, index) => {
+        <div
+        className="flex gap-4 px-4 sm:px-6 marquee-track"
+        style={{ width: "max-content" }}
+>
+       {[...examplePrompts, ...examplePrompts].map((prompt, index) => {
           const colors = categoryColors[prompt.category];
           const modeLabel = modeLabels[prompt.mode];
           return (
+            
             <motion.div
-              key={prompt.id}
+              key={`${prompt.id}-${index}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -91,13 +143,15 @@ export default function ExamplePrompts({ onSelectExample }: ExamplePromptsProps)
               whileHover={{ scale: 1.02, y: -6 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => onSelectExample(prompt.fullStory, prompt.category)}
-              className="group relative rounded-2xl p-5 cursor-pointer overflow-hidden transition-all duration-300"
+              className="marquee-card group relative rounded-2xl p-5 cursor-pointer overflow-hidden transition-all duration-300"
               style={{
                 background: "rgba(18,18,20,0.8)",
+                width: "340px", flexShrink: 0,
                 border: "1px solid rgba(39,39,42,0.8)",
                 backdropFilter: "blur(10px)",
               }}
             >
+              
               {/* Hover glow */}
               <div
                 className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
@@ -168,6 +222,7 @@ export default function ExamplePrompts({ onSelectExample }: ExamplePromptsProps)
           );
         })}
       </div>
+     </div>
     </section>
   );
 }

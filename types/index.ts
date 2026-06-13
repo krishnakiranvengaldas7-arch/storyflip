@@ -4,7 +4,17 @@ export type Category =
   | "Emotional"
   | "Revenge"
   | "True Crime"
-  | "Funny";
+  | "Funny"
+  | "Missing Person"
+  | "Family Secrets"
+  | "Workplace Drama"
+  | "Supernatural"
+  | "AITA"
+  | "Stalker"
+  | "Gaslighting"
+  | "Confession"
+  | "Neighbor Drama"
+  | "Friend Betrayal";
 
 export type LoadingState = "idle" | "loading" | "success" | "error";
 

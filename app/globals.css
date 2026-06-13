@@ -137,3 +137,36 @@ button, a {
 .float {
   animation: float 4s ease-in-out infinite;
 }
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-container {
+  perspective: 1200px;
+  perspective-origin: 50% 50%;
+}
+
+.marquee-track {
+  animation: marquee-scroll 140s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.marquee-card {
+  transform: rotateY(-8deg) translateZ(0px);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.marquee-card:hover {
+  transform: rotateY(0deg) translateZ(40px) scale(1.05);
+  box-shadow: 0 20px 60px rgba(139,92,246,0.25);
+  z-index: 20;
+}

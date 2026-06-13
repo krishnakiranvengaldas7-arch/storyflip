@@ -14,6 +14,16 @@ const categories: Category[] = [
   "Revenge",
   "True Crime",
   "Funny",
+  "Missing Person",
+  "Family Secrets",
+  "Workplace Drama",
+  "Supernatural",
+  "AITA",
+  "Stalker",
+  "Gaslighting",
+  "Confession",
+  "Neighbor Drama",
+  "Friend Betrayal",
 ];
 
 interface CategoryStyle {
@@ -53,16 +63,70 @@ const categoryStyles: { [key: string]: CategoryStyle } = {
     selected: "border-green-400 bg-green-500/20 text-green-300",
     unselected: "border-zinc-700 bg-zinc-800/50 text-zinc-400 hover:border-green-500/50 hover:text-green-300",
   },
+  "Missing Person": {
+    emoji: "🔍",
+    selected: "border-cyan-400 bg-cyan-500/20 text-cyan-300",
+    unselected: "border-zinc-700 bg-zinc-800/50 text-zinc-400 hover:border-cyan-500/50 hover:text-cyan-300",
+  },
+  "Family Secrets": {
+    emoji: "🤫",
+    selected: "border-purple-400 bg-purple-500/20 text-purple-300",
+    unselected: "border-zinc-700 bg-zinc-800/50 text-zinc-400 hover:border-purple-500/50 hover:text-purple-300",
+  },
+  "Workplace Drama": {
+    emoji: "💼",
+    selected: "border-amber-400 bg-amber-500/20 text-amber-300",
+    unselected: "border-zinc-700 bg-zinc-800/50 text-zinc-400 hover:border-amber-500/50 hover:text-amber-300",
+  },
+  Supernatural: {
+    emoji: "👻",
+    selected: "border-violet-400 bg-violet-500/20 text-violet-300",
+    unselected: "border-zinc-700 bg-zinc-800/50 text-zinc-400 hover:border-violet-500/50 hover:text-violet-300",
+  },
+  AITA: {
+    emoji: "⚖️",
+    selected: "border-sky-400 bg-sky-500/20 text-sky-300",
+    unselected: "border-zinc-700 bg-zinc-800/50 text-zinc-400 hover:border-sky-500/50 hover:text-sky-300",
+  },
+  Stalker: {
+    emoji: "👁️",
+    selected: "border-red-400 bg-red-500/20 text-red-300",
+    unselected: "border-zinc-700 bg-zinc-800/50 text-zinc-400 hover:border-red-500/50 hover:text-red-300",
+  },
+  Gaslighting: {
+    emoji: "🌀",
+    selected: "border-fuchsia-400 bg-fuchsia-500/20 text-fuchsia-300",
+    unselected: "border-zinc-700 bg-zinc-800/50 text-zinc-400 hover:border-fuchsia-500/50 hover:text-fuchsia-300",
+  },
+  Confession: {
+    emoji: "🕯️",
+    selected: "border-rose-400 bg-rose-500/20 text-rose-300",
+    unselected: "border-zinc-700 bg-zinc-800/50 text-zinc-400 hover:border-rose-500/50 hover:text-rose-300",
+  },
+  "Neighbor Drama": {
+    emoji: "🏠",
+    selected: "border-lime-400 bg-lime-500/20 text-lime-300",
+    unselected: "border-zinc-700 bg-zinc-800/50 text-zinc-400 hover:border-lime-500/50 hover:text-lime-300",
+  },
+  "Friend Betrayal": {
+    emoji: "🗡️",
+    selected: "border-pink-400 bg-pink-500/20 text-pink-300",
+    unselected: "border-zinc-700 bg-zinc-800/50 text-zinc-400 hover:border-pink-500/50 hover:text-pink-300",
+  },
 };
 
 interface StoryInputProps {
   onGenerate: (story: string, category: Category, mode: InputMode) => void;
   loadingState: LoadingState;
+  externalStory?: string;
+  externalCategory?: Category;
+  onStoryChange?: (story: string) => void;
+  onCategoryChange?: (category: Category) => void;
 }
 
-export default function StoryInput({ onGenerate, loadingState }: StoryInputProps) {
-  const [story, setStory] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState<Category>("Emotional");
+export default function StoryInput({ onGenerate, loadingState, externalStory, externalCategory, onStoryChange, onCategoryChange }: StoryInputProps) {
+  const [story, setStory] = useState(externalStory || "");
+  const [selectedCategory, setSelectedCategory] = useState<Category>(externalCategory || "Emotional");
   const [isFocused, setIsFocused] = useState(false);
   const [selectedMode, setSelectedMode] = useState<InputMode>("transform");
   const [detectedMode, setDetectedMode] = useState<InputMode | null>(null);
@@ -79,6 +143,19 @@ export default function StoryInput({ onGenerate, loadingState }: StoryInputProps
       setDetectedMode(null);
     }
   }, [story, manualOverride]);
+
+  useEffect(() => {
+    if (externalStory !== undefined && externalStory !== story) {
+      setStory(externalStory);
+      setManualOverride(false);
+    }
+  }, [externalStory]);
+
+  useEffect(() => {
+    if (externalCategory !== undefined) {
+      setSelectedCategory(externalCategory);
+    }
+  }, [externalCategory]);
 
   const handleModeChange = (mode: InputMode) => {
     setSelectedMode(mode);
@@ -104,8 +181,7 @@ export default function StoryInput({ onGenerate, loadingState }: StoryInputProps
 
   return (
     <section className="relative w-full py-16">
-      <div className="w-full px-6" style={{ maxWidth: "48rem", margin: "0 auto" }}>
-
+      <div className="w-full px-4 sm:px-6" style={{ maxWidth: "48rem", margin: "0 auto" }}>
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -186,23 +262,23 @@ export default function StoryInput({ onGenerate, loadingState }: StoryInputProps
             <span style={{ fontSize: "12px" }}>{currentConfig.icon}</span>
             <span
               style={{
-                color:
-                  selectedMode === "transform" ? "#8b5cf6" : "#10b981",
+                color: selectedMode === "transform" ? "#8b5cf6" : "#10b981",
                 fontSize: "11px",
                 fontWeight: 700,
                 letterSpacing: "0.08em",
                 textTransform: "uppercase",
               }}
             >
-              {selectedMode === "transform"
-                ? "Transform Mode"
-                : "Generate Mode"}
+              {selectedMode === "transform" ? "Transform Mode" : "Generate Mode"}
             </span>
           </div>
 
           <textarea
             value={story}
-            onChange={(e) => setStory(e.target.value)}
+            onChange={(e) => {
+              setStory(e.target.value);
+              onStoryChange?.(e.target.value);
+            }}
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
             placeholder={currentConfig.placeholder}
@@ -257,6 +333,7 @@ export default function StoryInput({ onGenerate, loadingState }: StoryInputProps
                   whileTap={{ scale: 0.98 }}
                   onClick={() => {
                     setStory(example);
+                    onStoryChange?.(example);
                     setManualOverride(true);
                     setSelectedMode("generate");
                   }}
@@ -302,7 +379,10 @@ export default function StoryInput({ onGenerate, loadingState }: StoryInputProps
                   key={category}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => setSelectedCategory(category)}
+                  onClick={() => {
+                    setSelectedCategory(category);
+                    onCategoryChange?.(category);
+                  }}
                   className={`flex items-center gap-2 px-4 py-2 rounded-xl border text-sm font-semibold transition-all duration-200 cursor-pointer ${
                     isSelected ? style.selected : style.unselected
                   }`}

@@ -25,13 +25,23 @@ export async function POST(request: NextRequest) {
     }
 
     const validCategories = [
-      "Cheating",
-      "Horror",
-      "Emotional",
-      "Revenge",
-      "True Crime",
-      "Funny",
-    ];
+  "Cheating",
+  "Horror",
+  "Emotional",
+  "Revenge",
+  "True Crime",
+  "Funny",
+  "Missing Person",
+  "Family Secrets",
+  "Workplace Drama",
+  "Supernatural",
+  "AITA",
+  "Stalker",
+  "Gaslighting",
+  "Confession",
+  "Neighbor Drama",
+  "Friend Betrayal",
+];
 
     if (!validCategories.includes(category)) {
       return NextResponse.json(

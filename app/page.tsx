@@ -3,21 +3,27 @@
 import { useState, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import HowItWorks from "@/components/HowItWorks";
+import BeforeAfter from "@/components/BeforeAfter";
 import StoryInput from "@/components/StoryInput";
 import ScriptOutput from "@/components/ScriptOutput";
 import LoadingSkeleton from "@/components/LoadingSkeleton";
 import EmptyState from "@/components/EmptyState";
 import ExamplePrompts from "@/components/ExamplePrompts";
 import Features from "@/components/Features";
+import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import ToastContainer from "@/components/ToastContainer";
 import Confetti from "@/components/Confetti";
 import { useToast } from "@/hooks/useToast";
 import { Category, InputMode, LoadingState, ScriptGenerationResponse } from "@/types";
 import ParticleBackground from "@/components/ParticleBackground";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
 
 export default function Home() {
   const [loadingState, setLoadingState] = useState<LoadingState>("idle");
+  const [inputStory, setInputStory] = useState("");
+  const [inputCategory, setInputCategory] = useState<Category>("Emotional");
   const [result, setResult] = useState<ScriptGenerationResponse | null>(null);
   const outputRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLDivElement>(null);
@@ -88,20 +94,13 @@ export default function Home() {
   };
 
   const handleSelectExample = (story: string, category: Category) => {
-    inputRef.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-    info("Example loaded! Pick a category and hit Generate.");
-    const textarea = document.querySelector("textarea");
-    if (textarea) {
-      const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
-        window.HTMLTextAreaElement.prototype,
-        "value"
-      )?.set;
-      nativeInputValueSetter?.call(textarea, story);
-      textarea.dispatchEvent(new Event("input", { bubbles: true }));
-    }
+  setInputStory(story);
+  setInputCategory(category);
+  inputRef.current?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+  info("Example loaded! Pick a category and hit Generate.");
   };
 
   return (
@@ -114,6 +113,7 @@ export default function Home() {
       }}
     >
       <ParticleBackground />
+      <ScrollProgressBar />
       {/* Toast Notifications */}
       <ToastContainer toasts={toasts} onRemove={removeToast} />
 
@@ -126,12 +126,22 @@ export default function Home() {
       {/* Hero */}
       <Hero />
 
+      {/* How It Works */}
+      <HowItWorks />
+
+      {/* Before/After */}
+      <BeforeAfter />
+
       {/* Story Input */}
       <div ref={inputRef}>
         <StoryInput
-          onGenerate={handleGenerate}
-          loadingState={loadingState}
-        />
+           onGenerate={handleGenerate}
+           loadingState={loadingState}
+           externalStory={inputStory}
+           externalCategory={inputCategory}
+           onStoryChange={setInputStory}
+           onCategoryChange={setInputCategory}
+/>
       </div>
 
       {/* Output Area */}
@@ -155,6 +165,7 @@ export default function Home() {
         }}
       >
         <ExamplePrompts onSelectExample={handleSelectExample} />
+        <Testimonials />
         <Features />
       </div>
 
