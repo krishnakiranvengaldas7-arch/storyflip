@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
+import Link from "next/link";
 
 export default function Navbar() {
   const { scrollY } = useScroll();
@@ -38,6 +39,7 @@ export default function Navbar() {
       }}
     >
       {/* Logo */}
+      <Link href="/">
       <motion.div
         whileHover={{ scale: 1.05 }}
         className="flex items-center gap-2.5 cursor-pointer"
@@ -82,6 +84,7 @@ export default function Navbar() {
           </span>
         </span>
       </motion.div>
+      </Link>
 
       {/* Right Side */}
       <div className="flex items-center gap-4">
@@ -102,6 +105,7 @@ export default function Navbar() {
         >
           Features
         </motion.a>
+        <Link href="/">
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -113,6 +117,7 @@ export default function Navbar() {
         >
           Get Started
         </motion.button>
+        </Link>
       </div>
     </motion.nav>
   );
