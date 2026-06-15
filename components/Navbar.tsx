@@ -86,6 +86,15 @@ export default function Navbar() {
       {/* Right Side */}
       <div className="flex items-center gap-4">
         <motion.a
+  whileHover={{ color: "#a78bfa" }}
+  href="/stories"
+  className="hidden md:block text-sm font-medium transition-colors duration-200"
+  style={{ color: "#71717a" }}
+>
+  Gallery
+</motion.a>
+
+        <motion.a
           whileHover={{ color: "#a78bfa" }}
           href="#features"
           className="hidden md:block text-sm font-medium transition-colors duration-200"
