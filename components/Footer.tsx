@@ -16,7 +16,7 @@ export default function Footer() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse at bottom center, rgba(124,58,237,0.04) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse at bottom center, rgba(245,158,11,0.04) 0%, transparent 70%)",
         }}
       />
 
@@ -30,8 +30,8 @@ export default function Footer() {
             <div
               className="w-7 h-7 rounded-lg flex items-center justify-center"
               style={{
-                background: "linear-gradient(135deg, #7c3aed, #a21caf)",
-                boxShadow: "0 0 12px rgba(124,58,237,0.3)",
+                background: "linear-gradient(135deg, #f59e0b, #dc2626)",
+                boxShadow: "0 0 12px rgba(245,158,11,0.3)",
               }}
             >
               <span style={{ color: "white", fontWeight: 900, fontSize: "12px" }}>S</span>
@@ -47,8 +47,7 @@ export default function Footer() {
               Story
               <span
                 style={{
-                  background: "linear-gradient(135deg, #a78bfa, #f0abfc)",
-                  WebkitBackgroundClip: "text",
+                  background: "linear-gradient(135deg, #fbbf24, #dc2626)",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
                 }}
@@ -68,7 +67,7 @@ export default function Footer() {
             {["Features", "Privacy", "Terms", "Contact"].map((link) => (
               <motion.a
                 key={link}
-                whileHover={{ color: "#a78bfa" }}
+                whileHover={{ color: "#fbbf24" }}
                 href="#"
                 style={{ color: "#3f3f46", fontSize: "13px", textDecoration: "none" }}
               >

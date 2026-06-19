@@ -14,7 +14,7 @@ export default function Features() {
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full"
           style={{
-            background: "radial-gradient(circle, rgba(124,58,237,0.06) 0%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(245,158,11,0.06) 0%, transparent 70%)",
           }}
         />
       </div>
@@ -34,11 +34,11 @@ export default function Features() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
           style={{
-            background: "rgba(124,58,237,0.08)",
-            border: "1px solid rgba(124,58,237,0.2)",
+            background: "rgba(245,158,11,0.08)",
+            border: "1px solid rgba(245,158,11,0.2)",
           }}
         >
-          <span style={{ color: "#a78bfa", fontSize: "13px", fontWeight: 600 }}>
+          <span style={{ color: "#fbbf24", fontSize: "13px", fontWeight: 600 }}>
             Why StoryFlip Works
           </span>
         </motion.div>
@@ -56,7 +56,7 @@ export default function Features() {
           Built For Creators Who{" "}
           <span
             style={{
-              background: "linear-gradient(135deg, #a78bfa, #f0abfc)",
+              background: "linear-gradient(135deg, #fbbf24, #dc2626)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -95,8 +95,9 @@ export default function Features() {
             <motion.div
               className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
               style={{
-                background: "linear-gradient(135deg, rgba(124,58,237,0.08), rgba(217,70,239,0.08))",
-                border: "1px solid rgba(124,58,237,0.3)",
+                background: "linear-gradient(135deg, #f59e0b, #dc2626)",
+                filter: "blur(16px)",
+                border: "1px solid rgba(245,158,11,0.3)",
               }}
             />
 
@@ -104,7 +105,7 @@ export default function Features() {
             <div
               className="absolute top-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               style={{
-                background: "linear-gradient(90deg, transparent, rgba(124,58,237,0.6), transparent)",
+                background: "linear-gradient(90deg, transparent, rgba(245,158,11,0.6), transparent)",
               }}
             />
 
@@ -158,8 +159,8 @@ export default function Features() {
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="relative px-8 py-4 rounded-2xl text-white font-bold text-base"
           style={{
-            background: "linear-gradient(135deg, #7c3aed, #a21caf)",
-            boxShadow: "0 8px 32px rgba(124,58,237,0.3)",
+            background: "linear-gradient(135deg, #f59e0b, #dc2626)",
+            boxShadow: "0 8px 32px rgba(245,158,11,0.3)",
           }}
         >
           <motion.div

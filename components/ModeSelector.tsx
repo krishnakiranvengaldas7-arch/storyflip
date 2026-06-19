@@ -34,11 +34,11 @@ export default function ModeSelector({
           style={{
             background:
               selectedMode === "transform"
-                ? "linear-gradient(135deg, rgba(124,58,237,0.3) 0%, rgba(162,28,175,0.3) 100%)"
+                ? "linear-gradient(135deg, rgba(245,158,11,0.3) 0%, rgba(220,38,38,0.3) 100%)"
                 : "linear-gradient(135deg, rgba(16,185,129,0.2) 0%, rgba(5,150,105,0.2) 100%)",
             border:
               selectedMode === "transform"
-                ? "1px solid rgba(124,58,237,0.4)"
+                ? "1px solid rgba(245,158,11,0.4)"
                 : "1px solid rgba(16,185,129,0.3)",
             top: "4px",
             bottom: "4px",

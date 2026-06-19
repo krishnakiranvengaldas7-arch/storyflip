@@ -80,9 +80,9 @@ export default function StoriesGallery({ scripts }: StoriesGalleryProps) {
           <span
             className="inline-block px-3 py-1 rounded-full text-xs font-bold mb-4"
             style={{
-              background: "rgba(139,92,246,0.1)",
-              border: "1px solid rgba(139,92,246,0.2)",
-              color: "#8b5cf6",
+              background: "rgba(245,158,11,0.1)",
+              border: "1px solid rgba(245,158,11,0.2)",
+              color: "#fbbf24",
               letterSpacing: "0.1em",
               textTransform: "uppercase",
             }}
@@ -101,7 +101,7 @@ export default function StoriesGallery({ scripts }: StoriesGalleryProps) {
             Scripts Created By{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #8b5cf6, #d946ef)",
+                background: "linear-gradient(135deg, #fbbf24, #dc2626)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}
@@ -130,14 +130,14 @@ export default function StoriesGallery({ scripts }: StoriesGalleryProps) {
                   isActive
                     ? cat === "All"
                       ? {
-                          background: "linear-gradient(135deg, #7c3aed, #a21caf)",
+                          background: "linear-gradient(135deg, #f59e0b, #dc2626)",
                           color: "white",
                           border: "1px solid transparent",
                         }
                       : {
-                          background: colors?.bg || "rgba(139,92,246,0.1)",
-                          border: `1px solid ${colors?.border || "rgba(139,92,246,0.3)"}`,
-                          color: colors?.text || "#c4b5fd",
+                          background: colors?.bg || "rgba(245,158,11,0.1)",
+                          border: `1px solid ${colors?.border || "rgba(245,158,11,0.3)"}`,
+                          color: colors?.text || "#fcd34d",
                         }
                     : {
                         background: "rgba(39,39,42,0.5)",
@@ -218,7 +218,7 @@ export default function StoriesGallery({ scripts }: StoriesGalleryProps) {
                     {/* First hook preview */}
                     {script.hooks?.[0] && (
                       <div className="flex items-start gap-2">
-                        <Zap className="w-3.5 h-3.5 mt-0.5 shrink-0" style={{ color: "#8b5cf6" }} />
+                        <Zap className="w-3.5 h-3.5 mt-0.5 shrink-0" style={{ color: "#f59e0b" }} />
                         <p
                           style={{
                             color: "#a1a1aa",

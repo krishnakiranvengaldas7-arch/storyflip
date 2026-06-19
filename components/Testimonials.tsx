@@ -78,7 +78,7 @@ export default function Testimonials() {
             width: "800px",
             height: "400px",
             background:
-              "radial-gradient(ellipse, rgba(124,58,237,0.04) 0%, transparent 70%)",
+              "radial-gradient(ellipse, rgba(245,158,11,0.04) 0%, transparent 70%)",
           }}
         />
       </div>
@@ -102,9 +102,9 @@ export default function Testimonials() {
             transition={{ duration: 0.5 }}
             className="inline-block px-3 py-1 rounded-full text-xs font-bold mb-4"
             style={{
-              background: "rgba(139,92,246,0.1)",
-              border: "1px solid rgba(139,92,246,0.2)",
-              color: "#8b5cf6",
+              background: "rgba(245,158,11,0.1)",
+              border: "1px solid rgba(245,158,11,0.2)",
+              color: "#fbbf24",
               letterSpacing: "0.1em",
               textTransform: "uppercase",
             }}
@@ -123,7 +123,7 @@ export default function Testimonials() {
             Creators Are{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #8b5cf6, #d946ef)",
+                background: "linear-gradient(135deg, #fbbf24, #dc2626)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}
@@ -158,7 +158,7 @@ export default function Testimonials() {
                 style={{
                   fontSize: "48px",
                   lineHeight: 1,
-                  color: "rgba(139,92,246,0.2)",
+                  color: "rgba(245,158,11,0.2)",
                   fontFamily: "Georgia, serif",
                   marginBottom: "-8px",
                 }}

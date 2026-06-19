@@ -44,9 +44,9 @@ function CopyButton({
       color: "#a1a1aa",
     },
     violet: {
-      background: "rgba(139,92,246,0.15)",
-      border: "1px solid rgba(139,92,246,0.3)",
-      color: "#c4b5fd",
+      background: "rgba(245,158,11,0.15)",
+      border: "1px solid rgba(245,158,11,0.3)",
+      color: "#fcd34d",
     },
     blue: {
       background: "rgba(59,130,246,0.1)",
@@ -179,9 +179,9 @@ ${result.hashtags ? `\n## # Hashtags\n${result.hashtags}` : ""}
         onClick={() => setOpen(!open)}
         className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 cursor-pointer"
         style={{
-          background: "rgba(139,92,246,0.15)",
-          border: "1px solid rgba(139,92,246,0.3)",
-          color: "#c4b5fd",
+          background: "rgba(245,158,11,0.15)",
+          border: "1px solid rgba(245,158,11,0.3)",
+          color: "#fcd34d",
         }}
       >
         <Download className="w-3 h-3" />
@@ -214,8 +214,8 @@ ${result.hashtags ? `\n## # Hashtags\n${result.hashtags}` : ""}
                 className="w-full text-left px-4 py-2.5 text-xs font-semibold transition-colors duration-150 cursor-pointer"
                 style={{ color: "#a1a1aa" }}
                 onMouseEnter={(e) => {
-                  (e.target as HTMLElement).style.background = "rgba(139,92,246,0.1)";
-                  (e.target as HTMLElement).style.color = "#c4b5fd";
+                  (e.target as HTMLElement).style.background = "rgba(245,158,11,0.1)";
+                  (e.target as HTMLElement).style.color = "#fcd34d";
                 }}
                 onMouseLeave={(e) => {
                   (e.target as HTMLElement).style.background = "transparent";
@@ -235,7 +235,7 @@ ${result.hashtags ? `\n## # Hashtags\n${result.hashtags}` : ""}
 function OutputCard({
   children,
   delay = 0,
-  glowColor = "rgba(139,92,246,0.08)",
+  glowColor = "rgba(245,158,11,0.08)",
 }: {
   children: React.ReactNode;
   delay?: number;
@@ -254,7 +254,7 @@ function OutputCard({
       style={{
         background: "rgba(24,24,27,0.95)",
         border: isHovered
-          ? "1px solid rgba(139,92,246,0.3)"
+          ? "1px solid rgba(245,158,11,0.3)"
           : "1px solid rgba(63,63,70,1)",
         boxShadow: isHovered
           ? `0 0 30px ${glowColor}`
@@ -287,7 +287,7 @@ function ScriptCard({ script, delay }: { script: string; delay: number }) {
   });
 
   return (
-    <OutputCard delay={delay} glowColor="rgba(139,92,246,0.1)">
+    <OutputCard delay={delay} glowColor="rgba(245,158,11,0.1)">
       <div
         className="flex items-center justify-between px-6 py-4"
         style={{
@@ -308,7 +308,7 @@ function ScriptCard({ script, delay }: { script: string; delay: number }) {
             <motion.span
               animate={{ opacity: [0.5, 1, 0.5] }}
               transition={{ duration: 1, repeat: Infinity }}
-              style={{ color: "#7c3aed", fontSize: "11px", fontWeight: 600 }}
+              style={{ color: "#f59e0b", fontSize: "11px", fontWeight: 600 }}
             >
               ● writing...
             </motion.span>
@@ -350,7 +350,7 @@ function ScriptCard({ script, delay }: { script: string; delay: number }) {
             <motion.span
               animate={{ opacity: [1, 0, 1] }}
               transition={{ duration: 0.7, repeat: Infinity }}
-              style={{ color: "#7c3aed", fontWeight: 700 }}
+              style={{ color: "#f59e0b", fontWeight: 700 }}
             >
               |
             </motion.span>
@@ -429,7 +429,7 @@ export default function ScriptOutput({ result }: ScriptOutputProps) {
                   border: "1px solid rgba(63,63,70,1)",
                 }}
               >
-                <Clock className="w-3.5 h-3.5 text-violet-400" />
+                <Clock className="w-3.5 h-3.5 text-amber-400" />
                 <span style={{ color: "#a1a1aa", fontSize: "12px", fontWeight: 500 }}>
                   {result.duration}
                 </span>
@@ -439,14 +439,14 @@ export default function ScriptOutput({ result }: ScriptOutputProps) {
           </motion.div>
 
           {/* Title Card */}
-          <OutputCard delay={0.15} glowColor="rgba(139,92,246,0.1)">
+          <OutputCard delay={0.15} glowColor="rgba(245,158,11,0.1)">
             <div className="p-5">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
-                  <Zap className="w-4 h-4 text-violet-400" />
+                  <Zap className="w-4 h-4 text-amber-400" />
                   <span
                     style={{
-                      color: "#8b5cf6",
+                      color: "#f59e0b",
                       fontSize: "11px",
                       fontWeight: 700,
                       letterSpacing: "0.1em",
@@ -472,7 +472,7 @@ export default function ScriptOutput({ result }: ScriptOutputProps) {
           </OutputCard>
 
           {/* Hooks Card */}
-          <OutputCard delay={0.25} glowColor="rgba(168,85,247,0.08)">
+          <OutputCard delay={0.25} glowColor="rgba(220,38,38,0.08)">
             <div className="p-5">
               <div className="flex items-center gap-2 mb-4">
                 <span
@@ -507,9 +507,9 @@ export default function ScriptOutput({ result }: ScriptOutputProps) {
                       <span
                         className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5"
                         style={{
-                          background: "rgba(124,58,237,0.15)",
-                          color: "#8b5cf6",
-                          border: "1px solid rgba(124,58,237,0.2)",
+                          background: "rgba(245,158,11,0.15)",
+                          color: "#f59e0b",
+                          border: "1px solid rgba(245,158,11,0.2)",
                         }}
                       >
                         {index + 1}

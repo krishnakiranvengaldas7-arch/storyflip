@@ -228,14 +228,14 @@ export default function StoryInput({ onGenerate, loadingState, externalStory, ex
           className="relative rounded-2xl overflow-hidden"
           style={{
             borderColor: isFocused
-              ? "rgba(139, 92, 246, 0.6)"
-              : "rgba(39, 39, 42, 1)",
+              ? "rgba(245, 158, 11, 0.5)"
+              : "rgba(41, 37, 36, 1)",
             border: isFocused
-              ? "1px solid rgba(139, 92, 246, 0.6)"
-              : "1px solid rgba(39, 39, 42, 1)",
-            background: "rgba(24, 24, 27, 0.9)",
+              ? "1px solid rgba(245, 158, 11, 0.5)"
+              : "1px solid rgba(41, 37, 36, 1)",
+            background: "rgba(28, 25, 23, 0.9)",
             boxShadow: isFocused
-              ? "0 0 40px rgba(139, 92, 246, 0.1)"
+              ? "0 0 40px rgba(245, 158, 11, 0.1)"
               : "0 4px 24px rgba(0,0,0,0.3)",
           }}
         >
@@ -248,7 +248,7 @@ export default function StoryInput({ onGenerate, loadingState, externalStory, ex
                 className="absolute inset-0 pointer-events-none"
                 style={{
                   background:
-                    "linear-gradient(135deg, rgba(139,92,246,0.04) 0%, rgba(217,70,239,0.04) 100%)",
+                    "linear-gradient(135deg, rgba(245,158,11,0.04) 0%, rgba(220,38,38,0.04) 100%)",
                 }}
               />
             )}
@@ -257,12 +257,12 @@ export default function StoryInput({ onGenerate, loadingState, externalStory, ex
           {/* Mode Badge inside input */}
           <div
             className="flex items-center gap-2 px-6 pt-4 pb-2"
-            style={{ borderBottom: "1px solid rgba(39,39,42,0.5)" }}
+            style={{ borderBottom: "1px solid rgba(41,37,36,0.5)" }}
           >
             <span style={{ fontSize: "12px" }}>{currentConfig.icon}</span>
             <span
               style={{
-                color: selectedMode === "transform" ? "#8b5cf6" : "#10b981",
+                color: selectedMode === "transform" ? "#f59e0b" : "#10b981",
                 fontSize: "11px",
                 fontWeight: 700,
                 letterSpacing: "0.08em",
@@ -289,7 +289,7 @@ export default function StoryInput({ onGenerate, loadingState, externalStory, ex
           {/* Bottom Bar */}
           <div
             className="relative z-10 flex items-center justify-between px-6 py-3"
-            style={{ borderTop: "1px solid rgba(39,39,42,0.8)" }}
+            style={{ borderTop: "1px solid rgba(41,37,36,0.8)" }}
           >
             <span style={{ color: "#52525b", fontSize: "13px" }}>
               {wordCount} {wordCount === 1 ? "word" : "words"}
@@ -415,12 +415,12 @@ export default function StoryInput({ onGenerate, loadingState, externalStory, ex
                     background:
                       selectedMode === "generate"
                         ? "linear-gradient(135deg, #059669 0%, #047857 100%)"
-                        : "linear-gradient(135deg, #7c3aed 0%, #a21caf 100%)",
+                        : "linear-gradient(135deg, #f59e0b 0%, #dc2626 100%)",
                     color: "white",
                     boxShadow:
                       selectedMode === "generate"
                         ? "0 8px 32px rgba(5,150,105,0.35)"
-                        : "0 8px 32px rgba(124,58,237,0.35)",
+                        : "0 8px 32px rgba(245,158,11,0.35)",
                     cursor: "pointer",
                   }
                 : {
@@ -437,7 +437,7 @@ export default function StoryInput({ onGenerate, loadingState, externalStory, ex
                   background:
                     selectedMode === "generate"
                       ? "linear-gradient(135deg, #059669 0%, #047857 100%)"
-                      : "linear-gradient(135deg, #7c3aed 0%, #a21caf 100%)",
+                      : "linear-gradient(135deg, #f59e0b 0%, #dc2626 100%)",
                   filter: "blur(16px)",
                   opacity: 0.4,
                   zIndex: -1,

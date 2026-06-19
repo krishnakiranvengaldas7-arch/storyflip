@@ -58,9 +58,9 @@ function CopyButton({ text }: { text: string }) {
       onClick={handleCopy}
       className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 cursor-pointer"
       style={{
-        background: "rgba(139,92,246,0.15)",
-        border: "1px solid rgba(139,92,246,0.3)",
-        color: "#c4b5fd",
+        background: "rgba(245,158,11,0.15)",
+        border: "1px solid rgba(245,158,11,0.3)",
+        color: "#fcd34d",
       }}
     >
       {copied ? (
@@ -172,9 +172,9 @@ export default function SharedScriptView({ script }: SharedScriptViewProps) {
                   <span
                     className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5"
                     style={{
-                      background: "rgba(124,58,237,0.15)",
-                      color: "#8b5cf6",
-                      border: "1px solid rgba(124,58,237,0.2)",
+                      background: "rgba(245,158,11,0.15)",
+                      color: "#f59e0b",
+                      border: "1px solid rgba(245,158,11,0.2)",
                     }}
                   >
                     {index + 1}
@@ -330,8 +330,8 @@ export default function SharedScriptView({ script }: SharedScriptViewProps) {
           transition={{ duration: 0.5, delay: 0.45 }}
           className="text-center mt-10 p-8 rounded-2xl"
           style={{
-            background: "rgba(139,92,246,0.06)",
-            border: "1px solid rgba(139,92,246,0.15)",
+            background: "rgba(245,158,11,0.06)",
+            border: "1px solid rgba(245,158,11,0.15)",
           }}
         >
           <p style={{ color: "white", fontWeight: 800, fontSize: "18px", marginBottom: "8px" }}>
@@ -346,8 +346,8 @@ export default function SharedScriptView({ script }: SharedScriptViewProps) {
               whileTap={{ scale: 0.97 }}
               className="px-8 py-3 rounded-xl text-white text-sm font-bold cursor-pointer"
               style={{
-                background: "linear-gradient(135deg, #7c3aed, #a21caf)",
-                boxShadow: "0 8px 32px rgba(124,58,237,0.35)",
+                background: "linear-gradient(135deg, #f59e0b, #dc2626)",
+                boxShadow: "0 8px 32px rgba(245,158,11,0.35)",
               }}
             >
               <span className="flex items-center gap-2">

@@ -121,7 +121,7 @@ export default function GeneratorPageTemplate({
     <main
       style={{
         minHeight: "100vh",
-        backgroundColor: "#09090b",
+       backgroundColor: "#0c0a09",
         color: "white",
         overflowX: "hidden",
       }}
@@ -140,7 +140,7 @@ export default function GeneratorPageTemplate({
             style={{
               width: "700px",
               height: "700px",
-              background: "radial-gradient(circle, rgba(124,58,237,0.06) 0%, transparent 70%)",
+              background: "radial-gradient(circle, rgba(245,158,11,0.06) 0%, transparent 70%)",
             }}
           />
         </div>
@@ -151,9 +151,9 @@ export default function GeneratorPageTemplate({
           transition={{ duration: 0.5 }}
           className="relative inline-block px-3 py-1 rounded-full text-xs font-bold mb-5"
           style={{
-            background: "rgba(139,92,246,0.1)",
-            border: "1px solid rgba(139,92,246,0.2)",
-            color: "#8b5cf6",
+            background: "rgba(245,158,11,0.1)",
+            border: "1px solid rgba(245,158,11,0.2)",
+            color: "#fbbf24",
             letterSpacing: "0.1em",
             textTransform: "uppercase",
           }}

@@ -61,9 +61,9 @@ export default function BeforeAfter() {
             transition={{ duration: 0.5 }}
             className="inline-block px-3 py-1 rounded-full text-xs font-bold mb-4"
             style={{
-              background: "rgba(139,92,246,0.1)",
-              border: "1px solid rgba(139,92,246,0.2)",
-              color: "#8b5cf6",
+              background: "rgba(245,158,11,0.1)",
+              border: "1px solid rgba(245,158,11,0.2)",
+              color: "#fbbf24",
               letterSpacing: "0.1em",
               textTransform: "uppercase",
             }}
@@ -82,7 +82,7 @@ export default function BeforeAfter() {
             Raw Story vs{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #8b5cf6, #d946ef)",
+                background: "linear-gradient(135deg, #fbbf24, #dc2626)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}
@@ -154,9 +154,9 @@ export default function BeforeAfter() {
             <div
               className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold mb-4 self-start"
               style={{
-                background: "rgba(139,92,246,0.15)",
-                border: "1px solid rgba(139,92,246,0.3)",
-                color: "#c4b5fd",
+                background: "rgba(245,158,11,0.15)",
+                border: "1px solid rgba(245,158,11,0.3)",
+                color: "#fcd34d",
               }}
             >
               ✨ After — Viral Script
@@ -190,7 +190,7 @@ export default function BeforeAfter() {
               className="absolute inset-y-0 w-px"
               style={{
                 background:
-                  "linear-gradient(180deg, transparent, rgba(139,92,246,0.8), rgba(217,70,239,0.8), transparent)",
+                  "linear-gradient(180deg, transparent, rgba(245,158,11,0.8), rgba(220,38,38,0.8), transparent)",
               }}
             />
             {/* Handle circle */}
@@ -198,8 +198,8 @@ export default function BeforeAfter() {
               animate={{ scale: isDragging ? 1.15 : 1 }}
               className="relative w-10 h-10 rounded-full flex items-center justify-center"
               style={{
-                background: "linear-gradient(135deg, #7c3aed, #a21caf)",
-                boxShadow: "0 0 20px rgba(139,92,246,0.5)",
+                background: "linear-gradient(135deg, #f59e0b, #dc2626)",
+                boxShadow: "0 0 20px rgba(245,158,11,0.5)",
                 border: "2px solid rgba(255,255,255,0.15)",
               }}
             >

@@ -8,7 +8,7 @@ export default function Navbar() {
   const navBackground = useTransform(
     scrollY,
     [0, 100],
-    ["rgba(9,9,11,0)", "rgba(9,9,11,0.9)"]
+    ["rgba(12,10,9,0)", "rgba(12,10,9,0.9)"]
   );
   const navBorder = useTransform(
     scrollY,
@@ -47,17 +47,18 @@ export default function Navbar() {
         <motion.div
           animate={{
             boxShadow: [
-              "0 0 10px rgba(124,58,237,0.3)",
-              "0 0 20px rgba(124,58,237,0.6)",
-              "0 0 10px rgba(124,58,237,0.3)",
+              "0 0 10px rgba(245,158,11,0.3)",
+              "0 0 20px rgba(245,158,11,0.6)",
+              "0 0 10px rgba(245,158,11,0.3)",
             ],
           }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           className="w-8 h-8 rounded-lg flex items-center justify-center"
           style={{
-            background: "linear-gradient(135deg, #7c3aed, #a21caf)",
+            background: "linear-gradient(135deg, #f59e0b, #dc2626)",
           }}
         >
+
           <span style={{ color: "white", fontWeight: 900, fontSize: "14px" }}>
             S
           </span>
@@ -74,7 +75,7 @@ export default function Navbar() {
           Story
           <span
             style={{
-              background: "linear-gradient(135deg, #a78bfa, #f0abfc)",
+              background: "linear-gradient(135deg, #fbbf24, #dc2626)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -89,7 +90,7 @@ export default function Navbar() {
       {/* Right Side */}
       <div className="flex items-center gap-4">
         <motion.a
-  whileHover={{ color: "#a78bfa" }}
+          whileHover={{ color: "#fbbf24" }}
   href="/stories"
   className="hidden md:block text-sm font-medium transition-colors duration-200"
   style={{ color: "#71717a" }}
@@ -98,7 +99,7 @@ export default function Navbar() {
 </motion.a>
 
         <motion.a
-          whileHover={{ color: "#a78bfa" }}
+          whileHover={{ color: "#fbbf24" }}
           href="#features"
           className="hidden md:block text-sm font-medium transition-colors duration-200"
           style={{ color: "#71717a" }}
@@ -111,8 +112,8 @@ export default function Navbar() {
           whileTap={{ scale: 0.95 }}
           className="px-5 py-2.5 rounded-xl text-white text-sm font-bold"
           style={{
-            background: "linear-gradient(135deg, #7c3aed, #a21caf)",
-            boxShadow: "0 4px 20px rgba(124,58,237,0.3)",
+            background: "linear-gradient(135deg, #f59e0b, #dc2626)",
+            boxShadow: "0 4px 20px rgba(245,158,11,0.3)",
           }}
         >
           Get Started

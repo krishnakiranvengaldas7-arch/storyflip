@@ -89,7 +89,7 @@ const categoryColors: Record<Category, { text: string; bg: string; border: strin
 };
 
 const modeLabels: Record<InputMode, { label: string; color: string }> = {
-  transform: { label: "Transform", color: "#a78bfa" },
+  transform: { label: "Transform", color: "#fbbf24" },
   generate: { label: "Generate", color: "#34d399" },
 };
 

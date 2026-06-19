@@ -26,7 +26,7 @@ export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const title = searchParams.get("title") || "A Viral Script";
   const category = searchParams.get("category") || "Emotional";
-  const accent = categoryColors[category] || "#8b5cf6";
+  const accent = categoryColors[category] || "#f59e0b";
 
   return new ImageResponse(
     (
@@ -38,7 +38,7 @@ export async function GET(request: NextRequest) {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "60px",
-          backgroundColor: "#09090b",
+          backgroundColor: "#0c0a09",
         }}
       >
         {/* Top - Logo */}
@@ -48,7 +48,7 @@ export async function GET(request: NextRequest) {
               width: "48px",
               height: "48px",
               borderRadius: "12px",
-              background: "linear-gradient(135deg, #7c3aed, #a21caf)",
+              background: "linear-gradient(135deg, #f59e0b, #dc2626)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -61,7 +61,7 @@ export async function GET(request: NextRequest) {
           </div>
           <div style={{ display: "flex", color: "white", fontSize: "32px", fontWeight: 800 }}>
             <span>Story</span>
-            <span style={{ color: "#d946ef" }}>Flip</span>
+            <span style={{ color: "#fbbf24" }}>Flip</span>
           </div>
         </div>
 

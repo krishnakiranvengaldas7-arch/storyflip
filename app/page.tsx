@@ -107,7 +107,7 @@ export default function Home() {
     <main
       style={{
         minHeight: "100vh",
-        backgroundColor: "#09090b",
+        backgroundColor: "#0c0a09",
         color: "white",
         overflowX: "hidden",
       }}

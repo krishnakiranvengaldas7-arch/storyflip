@@ -9,19 +9,19 @@ const steps = [
     title: "Paste Your Story",
     description:
       "Drop in any Reddit post, confession, true crime case, or emotional experience. Raw and unfiltered works best.",
-    color: "#8b5cf6",
-    glow: "rgba(139,92,246,0.15)",
-    border: "rgba(139,92,246,0.2)",
+    color: "#fbbf24",
+    glow: "rgba(245,158,11,0.15)",
+    border: "rgba(245,158,11,0.2)",
   },
   {
     number: "02",
     emoji: "🎭",
     title: "Pick a Category",
     description:
-      "Choose from 6 emotional frameworks — Cheating, Horror, Revenge, True Crime, Emotional, or Funny. Each one hits differently.",
-    color: "#d946ef",
-    glow: "rgba(217,70,239,0.15)",
-    border: "rgba(217,70,239,0.2)",
+      "Choose from 16 emotional frameworks — Cheating, Horror, Revenge, True Crime, Gaslighting, Stalker and more. Each one hits differently.",
+    color: "#dc2626",
+    glow: "rgba(220,38,38,0.15)",
+    border: "rgba(220,38,38,0.2)",
   },
   {
     number: "03",
@@ -46,7 +46,7 @@ export default function HowItWorks() {
             width: "600px",
             height: "600px",
             background:
-              "radial-gradient(circle, rgba(124,58,237,0.04) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(245,158,11,0.04) 0%, transparent 70%)",
           }}
         />
       </div>
@@ -70,9 +70,9 @@ export default function HowItWorks() {
             transition={{ duration: 0.5 }}
             className="inline-block px-3 py-1 rounded-full text-xs font-bold mb-4"
             style={{
-              background: "rgba(139,92,246,0.1)",
-              border: "1px solid rgba(139,92,246,0.2)",
-              color: "#8b5cf6",
+              background: "rgba(245,158,11,0.1)",
+              border: "1px solid rgba(245,158,11,0.2)",
+              color: "#fbbf24",
               letterSpacing: "0.1em",
               textTransform: "uppercase",
             }}
@@ -91,7 +91,7 @@ export default function HowItWorks() {
             From Story to{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #8b5cf6, #d946ef)",
+                background: "linear-gradient(135deg, #fbbf24, #dc2626)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}
@@ -112,7 +112,7 @@ export default function HowItWorks() {
             className="hidden md:block absolute top-12 left-1/4 right-1/4 h-px"
             style={{
               background:
-                "linear-gradient(90deg, rgba(139,92,246,0.3), rgba(217,70,239,0.3), rgba(16,185,129,0.3))",
+                "linear-gradient(90deg, rgba(245,158,11,0.3), rgba(220,38,38,0.3), rgba(16,185,129,0.3))",
               zIndex: 0,
               width: "50%",
               left: "25%",
