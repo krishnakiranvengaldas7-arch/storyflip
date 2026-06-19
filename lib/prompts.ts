@@ -39,7 +39,7 @@ UNIVERSAL RETENTION RULES — NEVER BREAK THESE:
 
 6. FORBIDDEN WORDS: Never use: "basically", "literally", "honestly", "actually", "so", "well", "you know", "kind of", "sort of", "I mean"
 
-7. NUMBERS ARE SPECIFIC: Don't say "a long time". Use specific numbers, for example "eleven years". Don't say "a lot of messages". Use quantised numbers for more depth like for example, "forty-three messages".`;
+7. NUMBERS ARE SPECIFIC: Don't say "a long time". Use specific numbers. Don't say "a lot of messages". Use quantised numbers for more depth.`;
 
 export const CATEGORY_PROMPTS: Record<Category, string> = {
   Cheating: `
@@ -360,7 +360,7 @@ You MUST respond with ONLY a valid JSON object. No introduction. No explanation.
     "Hook 3: The most emotionally devastating opening line. Under 25 words.",
     "Hook 4: A question or statement that creates an immediate open loop. Under 25 words."
   ],
-  "script": "The complete narration script. Written in first person. Uses [PAUSE], [SLOW], [FAST], and [BEAT] markers. MAXIMUM 150 WORDS. Must be speakable in 45-65 seconds. Be ruthless — cut anything that isn't essential. Every single sentence must earn its place or it gets cut.",
+  "script": "The complete narration script. Written in first person. Uses [PAUSE], [SLOW], [FAST], and [BEAT] markers. MAXIMUM 150 WORDS. Must be speakable in 65-75 seconds. Be ruthless — cut anything that isn't essential. Every single sentence must earn its place or it gets cut.",
   "duration": "Estimated speaking duration e.g. '62 seconds'",
   "thumbnail": "A specific, vivid description of the perfect thumbnail. Include: subject, expression, text overlay suggestion, color mood.",
   "caption": "The perfect social media caption with emojis. Creates curiosity. Under 300 characters.",
