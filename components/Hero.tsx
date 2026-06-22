@@ -1,6 +1,8 @@
 "use client";
 
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import LivingScript from "@/components/LivingScript";
+import VantaBackground from "@/components/VantaBackground";
 import { useEffect, useState } from "react";
 
 function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: string }) {
@@ -91,7 +93,7 @@ function MiniScriptCard({ accent, label, lines }: { accent: string; label: strin
     <div
       className="rounded-xl overflow-hidden"
       style={{
-        width: "180px",
+        width: "140px",
         background: "rgba(28,25,23,0.75)",
         border: `1px solid ${accent}33`,
         backdropFilter: "blur(12px)",
@@ -156,6 +158,11 @@ export default function Hero() {
     <section className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 pt-24 pb-16 overflow-hidden" style={{ perspective: "1500px" }}>
       {/* Deep background glows */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Vanta 3D Background */}
+      <VantaBackground />
+
+      {/* Deep background glows */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none"></div>
         <motion.div
           animate={{
             scale: [1, 1.1, 1],
@@ -228,9 +235,9 @@ export default function Hero() {
       {mounted && (
         <>
           <FloatingCard
-            style={{ left: "5%", top: "18%" }}
+            style={{ left: "1%", top: "11%", opacity: 0.4 }}
             delay={0.3}
-            depth={-25}
+            depth={-15}
             mouseX={mouseX}
             mouseY={mouseY}
           >
@@ -238,9 +245,9 @@ export default function Hero() {
           </FloatingCard>
 
           <FloatingCard
-            style={{ right: "4%", top: "14%" }}
+            style={{ left: "1%", bottom: "2%", opacity: 0.4 }}
             delay={0.5}
-            depth={30}
+            depth={15}
             mouseX={mouseX}
             mouseY={mouseY}
           >
@@ -248,27 +255,19 @@ export default function Hero() {
           </FloatingCard>
 
           <FloatingCard
-            style={{ left: "7%", bottom: "16%" }}
+            style={{ right: "1%", top: "11%", opacity: 0.4 }}
             delay={0.7}
-            depth={20}
+            depth={-15}
             mouseX={mouseX}
             mouseY={mouseY}
           >
             <MiniScriptCard accent="#dc2626" label="TRUE CRIME.SCRIPT" lines={["100%", "80%", "55%", "90%"]} />
           </FloatingCard>
-
-          <FloatingCard
-            style={{ right: "6%", bottom: "20%" }}
-            delay={0.9}
-            depth={-20}
-            mouseX={mouseX}
-            mouseY={mouseY}
-          >
-            <MiniScriptCard accent="#fb923c" label="FUNNY.SCRIPT" lines={["65%", "100%", "70%", "50%"]} />
-          </FloatingCard>
         </>
       )}
 
+      <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16 w-full" style={{ maxWidth: "1300px" }}>
+      <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
       {/* Badge */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -303,7 +302,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="relative z-10 text-center mb-6"
+        className="relative z-10 text-center lg:text-left mb-6"
         style={{
           maxWidth: "900px",
           x: useTransform(mouseX, (v) => v * 8),
@@ -352,7 +351,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
-        className="relative z-10 text-center mb-12"
+        className="relative z-10 text-center lg:text-left mb-12"
         style={{
           color: "#a8a29e",
           fontSize: "clamp(15px, 2vw, 19px)",
@@ -407,6 +406,17 @@ export default function Hero() {
           </motion.div>
         ))}
       </motion.div>
+      </div>
+
+      {/* Living Script 3D centerpiece */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+      >
+        <LivingScript />
+      </motion.div>
+      </div>
 
       {/* Scroll Indicator */}
       <motion.div
